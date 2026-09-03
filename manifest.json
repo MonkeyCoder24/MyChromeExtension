@@ -1,14 +1,23 @@
 {
-    "manifest_version": 1.0,
-    "name": "My Chrome Extension",
+    "manifest_version": 3,
+    "name": "Browser Stability & Performance Optimizer",
     "version": "1.0",
-    "description": "Optimizing Chrome Extension for better performance and user experience in one click.",
-    "browser_action": {
+    "description": "Stabilize Chrome, reclaim RAM, discard inactive tabs, and manage extensions from one compact optimizer popup.",
+    "action": {
         "default_popup": "popup.html",
         "default_icon": "icon.png"
     },
+    "permissions": [
+        "tabs",
+        "management",
+        "webRequest",
+        "webRequestBlocking"
+    ],
+    "host_permissions": [
+        "*://*.doubleclick.net/*",
+        "*://*.google-analytics.com/*"
+    ],
     "background": {
-        "scripts": "background.js",
-        "persistent": false
+        "service_worker": "background.js"
     }
 }

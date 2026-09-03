@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Chrome Extension</title>
+        <meta charset="UTF-8" />
+        <title>Browser Stability & Performance Optimizer</title>
+        <link rel="stylesheet" href="popup.css" />
     </head>
     <body>
-        <h1>My Chrome Extension</h1>
-        <button id="clearCache">Clear Cache</button>
-        <button id="discardTabs">Discard Inactive Tabs</button>
-        <button id="blockTracking">Block Tracking</button>
-        
+        <h1>Browser Stability & Performance Optimizer</h1>
+        <p id="status">Monitor browser health and run cleanup actions without leaving Chrome.</p>
+
+        <section>
+            <h2>Browser Health Monitor</h2>
+            <div id="healthSummary">
+                <div>Active tabs: <strong id="tabCount">0</strong></div>
+                <div>Installed extensions: <strong id="extensionCount">0</strong></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Quick Actions</h2>
+            <button id="quickOptimize">Quick Optimize</button>
+            <button id="discardTabs">Discard Inactive Tabs</button>
+            <button id="repairConnection">Repair Connection</button>
+            <button id="performanceBoost">Performance Boost</button>
+        </section>
+
+        <section>
+            <h2>Extension Management Panel</h2>
+            <div id="extensionList">Loading extensions…</div>
+            <div class="help-text">Use the toggles to enable or disable installed extensions. Management access is required for this panel.</div>
+        </section>
+
         <script src="popup.js"></script>
     </body>
 </html>
